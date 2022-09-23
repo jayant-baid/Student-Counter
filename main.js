@@ -31,19 +31,20 @@ function save() {
     // 3. Render the variable in the saveEl using innerText
     // NB: Make sure to not delete the existing content of the paragraph
 
-    let countStr = count + " -  "
-    // saveEl.innerText += countStr
-    /* innerText me spacing dhang se nhi aa rhi dash ke baad wali space include nhi ho rhi
-
-    MDN REFERENCES
-1.  textContent gets the content of all elements, including <script> and <style> elements. In contrast, innerText only shows "human-readable" elements.
-2.  textContent returns every element in the node. In contrast, innerText is aware of styling and won't return the text of "hidden" elements. 
-MTLB innerText last space jo kind of hidden h usse return nhi karta h
-*/
-    saveEl.textContent += countStr
-    // When we hit save, count should go to 0 & 0 should be displayed
-    count = 0
-    countEL.textContent = 0
-
+    if (count != 0) {
+        let countStr = count + " -  "
+        // saveEl.innerText += countStr
+        /* innerText me spacing dhang se nhi aa rhi dash ke baad wali space include nhi ho rhi
+    
+        MDN REFERENCES
+    1.  textContent gets the content of all elements, including <script> and <style> elements. In contrast, innerText only shows "human-readable" elements.
+    2.  textContent returns every element in the node. In contrast, innerText is aware of styling and won't return the text of "hidden" elements. 
+    MTLB innerText last space jo kind of hidden h usse return nhi karta h
+    */
+        saveEl.textContent += countStr
+        // When we hit save, count should go to 0 & 0 should be displayed
+        count = 0
+        countEL.textContent = 0
+    }
     // console.log(count)
 }
